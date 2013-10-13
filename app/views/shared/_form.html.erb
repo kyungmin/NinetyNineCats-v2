@@ -1,6 +1,7 @@
+<% subject = (cat.persisted? ? "Edit" : "Register") %>
 <% action = (cat.persisted? ? cat_url(cat) : cats_url) %>
 <% method = (cat.persisted? ? :put : :post) %>
-<h1>Register cat</h1>
+<h1><%= subject %> cat</h1>
 <form action="<%= action %>" method="post">
   <input type="hidden" name="_method" value="<%= method %>">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
