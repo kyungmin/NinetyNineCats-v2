@@ -1,4 +1,3 @@
-<%= link_to 'Register cat', new_cat_url %> | <%= link_to 'Reserve cat', new_cat_rental_request_url %>
 <br />
 <br />
 <table>
@@ -8,6 +7,7 @@
   <th>Sex</th>
   <th>Color</th>
   <th>Birth date</th>
+  <th>Owner</th>
 </tr>
 <% @cats.each do |cat| %>
   <tr>
@@ -16,6 +16,7 @@
     <td><%= cat.sex %></td>
     <td><%= cat.color %></td>
     <td><%= cat.birth_date %></td>
+    <td><%= cat.owner.user_name %></td>
   </tr>
 <% end %>
 </table>

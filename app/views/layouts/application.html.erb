@@ -7,6 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="top_nav">
+  <%= link_to "Register cat", new_cat_url %> | 
+  <%= link_to "All cats", cats_url %> | 
+  <%= link_to "Reserve cats", new_cat_rental_request_url %> 
+  <% if current_user.nil? %>
+    (<%= link_to "Sign up", new_user_url %> | 
+    <%= link_to "Log in", new_session_url %>)
+  <% else %>
+    Welcome, <%= current_user.user_name %>! 
+    (<%= link_to "Log out", session_url, method: "delete" %>)
+  <% end %>
+</div>
 
 <%= yield %>
 

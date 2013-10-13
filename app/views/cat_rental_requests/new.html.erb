@@ -10,7 +10,8 @@
   <select name="cat_rental_request[cat_id]" id="cat_rental_request_cat_id">
     <option></option>
     <% Cat.all.each do |cat| %>
-      <option value="<%= cat.id %>"><%= cat.name %></option>
+      <option 
+       value="<%= cat.id %>"><%= cat.name %></option>
     <% end %>
   </select>
   <br>

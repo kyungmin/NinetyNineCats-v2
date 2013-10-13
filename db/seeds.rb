@@ -5,5 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Cat.create([{name: "gadget", age: 2, color: "Black", sex: "M", birth_date: "2012-10-01"}])
-Cat.create([{name: "alex", age: 2, color: "Orange", sex: "M", birth_date: "2012-09-01"}])
+Cat.create([{name: "gadget", age: 2, color: "Black", sex: "M", birth_date: "2012-10-01", user_id: 1}])
+Cat.create([{name: "alex", age: 2, color: "Orange", sex: "M", birth_date: "2012-09-01", user_id: 1}])

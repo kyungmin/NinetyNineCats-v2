@@ -1,9 +1,11 @@
 <h1>Cat: <%= @cat.name %></h1>
+<%= link_to 'Edit', edit_cat_url(@cat) if current_user.is_owner?(@cat) %>
 <ul>
   <li>Age: <%= @cat.age %></li>
   <li>Sex: <%= @cat.sex %></li>
   <li>Color: <%= @cat.color %></li>
   <li>Birth date: <%= @cat.birth_date %></li>
+  <li>Owner: <%= @cat.owner.user_name %></li>
 </ul>
 <br>
 <hr>
@@ -12,7 +14,7 @@
 <ul>
   <% @cat.cat_rental_requests.order("start_date").each do |request| %>
     <li><%= "#{request.start_date} – #{request.end_date}" %></li>
-    <% if request.pending? %>
+    <% if request.pending? && current_user.is_owner?(@cat) %>
       <%= button_to "Approve", approve_cat_rental_request_url(request) %>
       <%= button_to "Decline", deny_cat_rental_request_url(request) %>
     <% else %>
