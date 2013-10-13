@@ -1,0 +1,21 @@
+<%= link_to 'Register cat', new_cat_url %> | <%= link_to 'Reserve cat', new_cat_rental_request_url %>
+<br />
+<br />
+<table>
+<tr>
+  <th>Name</th>
+  <th>Age</th>
+  <th>Sex</th>
+  <th>Color</th>
+  <th>Birth date</th>
+</tr>
+<% @cats.each do |cat| %>
+  <tr>
+    <td><%= link_to cat.name, cat_url(cat) %></td>
+    <td><%= cat.age %></td>
+    <td><%= cat.sex %></td>
+    <td><%= cat.color %></td>
+    <td><%= cat.birth_date %></td>
+  </tr>
+<% end %>
+</table>
